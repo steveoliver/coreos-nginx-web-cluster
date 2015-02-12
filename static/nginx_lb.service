@@ -33,6 +33,6 @@ steveoliver/nginx-lb:ubuntu-14.04 /usr/local/bin/confd-watch
 ExecStop=/usr/bin/docker stop nginx_lb
 
 [X-Fleet]
-# @todo: Make this always run on the 'first' machine, or the likes.
+MachineMetadata=role=load-balancer
 Conflicts=nginx_lb.service
 Conflicts=nginx@*.service
